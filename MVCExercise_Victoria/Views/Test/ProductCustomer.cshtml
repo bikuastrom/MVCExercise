@@ -1,0 +1,26 @@
+﻿@model MVCExercise_Victoria.ViewModels.ProductCustomerViewModel
+
+@{
+	ViewData["Title"] = "ProductCustomer";
+}
+
+<h1>Products and Customers</h1>
+
+<div class="row">
+	<div class="col-6">
+		@{
+			foreach (var item in Model.Products)
+			{
+				<partial name="/Views/Shared/_ProductPartial.cshtml" model="item" />
+			}
+		}
+	</div>
+	<div class="col-6">
+		@{
+			foreach (var item in Model.Customers)
+			{
+				<partial name="/Views/Shared/_CustomerPartial.cshtml" model="item" />
+			}
+		}
+	</div>
+</div>
